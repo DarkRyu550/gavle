@@ -1,0 +1,35 @@
+[package]
+name = "gavle-examples"
+version = "0.1.0"
+authors = ["Matheus Branco Borella <dark.ryu.550@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+log      = "0.4"
+gavle    = { path = "../", features = ["mipmap-generation"] }
+bytemuck = { version = "1", features = ["derive"] }
+image    = "0.23"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+glutin = "0.26"
+env_logger = "0.8"
+winit = "0.24"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys.version = "0.3"
+web-sys.features = [
+    "Window",
+    "Document",
+    "HtmlElement",
+    "Node",
+    "HtmlCanvasElement",
+]
+
+wasm-bindgen = "0.2"
+console_log = { version = "0.2", features = ["color"] }
+winit = { version = "0.24", features = ["web-sys"] }
+console_error_panic_hook = "0.1"
+
+[[bin]]
+name = "quad"
+path = "quad/main.rs"
