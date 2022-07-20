@@ -1,12 +1,3 @@
-[package]
-name = "gavle"
-version = "0.1.0"
-authors = ["Matheus Branco Borella <dark.ryu.550@gmail.com>"]
-edition = "2021"
-repository = "https://github.com/DarkRyu550/gavle"
-keywords = ["graphics"]
-license = "MIT OR Apache-2.0"
-description = """
 # Gavle
 
 Gavle is an OpenGL wrapper crate modeled after wgpu.
@@ -62,20 +53,3 @@ currently.
 This crate was first written as part of a larger project which is still ongoing
 and has not yet been published, and, thus, the stage of developemnt this crate
 is in should probably not be gauged from its version number alone.
-"""
-
-[dependencies]
-log       = "0.4"
-glow      = "0.11"
-thiserror = "1"
-smallvec  = "1"
-tinyvec   = "1"
-arrayvec  = "0.6"
-bitflags  = "1"
-generational-arena = "0.2"
-
-image     = { version = "0.23", optional = true, default-features = false }
-bytemuck  = { version = "1", optional = true }
-
-[features]
-mipmap-generation = ["image", "bytemuck"]
